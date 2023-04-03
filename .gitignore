@@ -20,7 +20,7 @@ public/css/main.css
 coverage
 
 # API keys and secrets
-.env
+# .env should be ignored by git, but you'll probably want it for your own
 
 # Dependency directory
 node_modules
