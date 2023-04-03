@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/pranierb/MI7-API-Rest#readme",
   "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^1.3.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2"
   },
