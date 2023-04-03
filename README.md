@@ -1,16 +1,18 @@
 Duel
 	- id
 	- date
-	- winner
-	- loser
+	- winnerId
+	- loserId
 Hero
 	- id
+	- name
 	- vie
 	- attack
 	- defense
 	- itemId
 Item
 	- id
+	- name
 	- attack
 	- defense
 
