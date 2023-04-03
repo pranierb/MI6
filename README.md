@@ -20,3 +20,5 @@ Logicielle utilisé pour les diagrammes de classes : https://lucid.app/lucidchar
 
 Groupe : Alexandre, Quentin et Pierre
 Objectif : faire une API Rest permettant d'accéder aux ressources (duels, héros, items) stockés.
+
+Le prof demande de faire les liens de navigatibilité.
