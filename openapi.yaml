@@ -1,0 +1,245 @@
+openapi: 3.0.0
+info:
+  title: Duel API
+  description: API for managing duels between champions
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+paths:
+  /duels:
+    get:
+      summary: Get all duels
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Duel'
+    post:
+      summary: Create a new duel
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DuelInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Duel'
+  /duels/{id}:
+    get:
+      summary: Get a duel by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Duel'
+        '404':
+          description: Not Found
+    put:
+      summary: Update a duel by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DuelInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Duel'
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete a duel by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+  /items:
+    get:
+      summary: Get all items or search items by attribute
+      parameters:
+        - name: attack
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+    post:
+      summary: Create a new item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItemInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+  /items/{id}:
+    get:
+      summary: Get an item by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '404':
+          description: Not Found
+    put:
+      summary: Update an item by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ItemInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Item'
+        '404':
+          description: Not Found
+    delete:
+      summary: Delete an item by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: No Content
+        '404':
+          description: Not Found
+components:
+  schemas:
+    Duel:
+      type: object
+      properties:
+        id:
+          type: integer
+        date:
+          type: string
+          format: date-time
+        championId1:
+          type: integer
+        championId2:
+          type: integer
+        winnerId:
+          type: integer
+      required:
+        - id
+        - date
+        - championId1
+        - championId2
+      additionalProperties: false
+    DuelInput:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        championId1:
+          type: integer
+        championId2:
+          type: integer
+        winnerId:
+          type: integer
+      required:
+        - date
+        - championId1
+        - championId2
+      additionalProperties: false
+    Item:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        attack:
+          type: integer
+        defense:
+          type: integer
+      required:
+        - id
+        - name
+        - attack
+        - defense
+      additionalProperties: false
+    ItemInput:
+      type: object
+      properties:
+        name:
+          type: string
+        attack:
+          type: integer
+        defense:
+          type: integer
+      required:
+        - name
+        - attack
+        - defense
+      additionalProperties: false
