@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 
 import HeroController from './Controller/HeroController';
 import ItemController from './Controller/ItemController';
+import DuelController from './Controller/DuelController';
 
 dotenv.config();
 
@@ -10,34 +11,28 @@ const app: Express = express();
 const port = process.env.PORT;
 
 const heroController = new HeroController();
+
 const itemController = new ItemController();
+
+const duelController = new DuelController();
 
 const routes = {
 	"get": {
 		"heroes": {
-			":id": heroController.getById,
 			"": heroController.getAll,
-			"duels": heroController.getByDuels,
+			":id": heroController.getById
 		},
 		"items": {
 			"": itemController.getAll,
 			":id": itemController.getById
-		}
-	},
-	"post": {
-		"heroes": {
-			"": heroController.create
-		}
-	},
-	"put": {
-		"heroes": {
-			":id": heroController.update
 		},
-	},
-	"delete": {
-		"heroes": {
-			":id": heroController.delete
-		}
+		"duels": {
+			"": duelController.getAll,
+			":id":duelController.getById,
+			"hero": {
+				":id": duelController.getByHero,
+			}
+		},
 	}
 }
 
