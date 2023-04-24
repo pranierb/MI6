@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Duel API
-  description: API for managing duels between champions
+  description: API for managing duels between heroes
   version: 1.0.0
 servers:
   - url: http://localhost:8000
@@ -18,6 +18,23 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Duel'
+              example:
+                value:
+                    - id: 1
+                    date: "2023-04-01"
+                    championId: 3
+                    championId2: 1
+                    winnerId: 3
+                    - id: 2
+                    date: "2023-03-30"
+                    championId: 2
+                    championId2: 5
+                    winnerId: 2
+                    - id: 3
+                    date: "2023-03-27"
+                    championId: 4
+                    championId2: 1
+                    winnerId: 4
     post:
       summary: Create a new duel
       requestBody:
@@ -144,7 +161,7 @@ paths:
           in: path
           required: true
           schema:
-            type
+            type: integer
       requestBody:
         required: true
         content:
