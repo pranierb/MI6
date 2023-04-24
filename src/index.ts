@@ -44,6 +44,8 @@ app.listen(port, () => {
 	console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
 
-for (const route of getRoutes("get")) {
-	app.get(route.path, route.method);
-}
+Object.keys(routes).forEach(async (method) => {
+	for (const route of getRoutes(method as keyof typeof routes)) {
+		app.get(route.path, await route.method);
+	}
+})
