@@ -13,9 +13,16 @@ export enum tableType {
     DUELS = 'duels',
 }
 
-export const db = async (method: DBMethod, type: tableType, id?: string, body?: any) => {
+export type searchType<T> = {
+    [key in keyof T]?: T[key];
+}
 
-    const url = `http://localhost:3000/${type}/${id || ''}`;
+export const db = async (method: DBMethod, type: tableType, id?: string, body?: any, search?: searchType<any>) => {
+
+    // contruct the search string
+    const searchString = search ? `?${Object.keys(search).map((key) => `${key}=${search[key]}`).join('&')}` : '';
+
+    const url = `http://localhost:3000/${type}/${id || ''}${searchString}`;
     
     return await axios({
         method,

@@ -12,8 +12,9 @@ const heroController = new HeroController();
 const routes = {
 	"get": {
 		"heroes": {
-			":id": heroController.getById
-		}
+			":id": heroController.getById,
+			"": heroController.getAll
+		},
 	}
 }
 
