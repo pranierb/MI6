@@ -1,6 +1,8 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+
 import HeroController from './Controller/HeroController';
+import ItemController from './Controller/ItemController';
 
 dotenv.config();
 
@@ -8,6 +10,7 @@ const app: Express = express();
 const port = process.env.PORT;
 
 const heroController = new HeroController();
+const itemController = new ItemController();
 
 const routes = {
 	"get": {
@@ -16,6 +19,10 @@ const routes = {
 			"": heroController.getAll,
 			"duels": heroController.getByDuels,
 		},
+		"items": {
+			"": itemController.getAll,
+			":id": itemController.getById
+		}
 	},
 	"post": {
 		"heroes": {
