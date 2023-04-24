@@ -13,8 +13,24 @@ const routes = {
 	"get": {
 		"heroes": {
 			":id": heroController.getById,
-			"": heroController.getAll
+			"": heroController.getAll,
+			"duels": heroController.getByDuels,
 		},
+	},
+	"post": {
+		"heroes": {
+			"": heroController.create
+		}
+	},
+	"put": {
+		"heroes": {
+			":id": heroController.update
+		},
+	},
+	"delete": {
+		"heroes": {
+			":id": heroController.delete
+		}
 	}
 }
 

@@ -10,7 +10,7 @@ export default class HeroController {
     }
 
     async getAll(req: Request, res: Response) {
-        const heroes = await db(DBMethod.GET, tableType.HEROES);
+        const heroes = await db(DBMethod.GET, tableType.HEROES, undefined, undefined, req.query);
 
         res.send(heroes);
     }
@@ -33,6 +33,10 @@ export default class HeroController {
         res.send(hero);
     }
 
-    
+    async getByDuels(req: Request, res: Response) {
+        const hero = await db(DBMethod.GET, tableType.HEROES, req.params.id, 'duels');
+
+        res.send(hero);
+    }
 
 }
