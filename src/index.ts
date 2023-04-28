@@ -98,6 +98,21 @@ app.listen(port, () => {
 
 Object.keys(routes).forEach(async (method) => {
 	for (const route of getRoutes(method as keyof typeof routes)) {
-		app.get(route.path, await route.method);
+		switch (method) {
+			case "get":
+				app.get(route.path, await route.method);
+				break;
+			case "post":
+				app.post(route.path, await route.method);
+				break;
+			case "put":
+				app.put(route.path, await route.method);
+				break;
+			case "delete":
+				app.delete(route.path, await route.method);
+				break;
+		}
+				
+		console.log(`⚡️[server]: Route ${method.toUpperCase()} ${route.path} is registered`);
 	}
 })
