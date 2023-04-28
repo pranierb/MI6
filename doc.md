@@ -87,15 +87,15 @@ Voici les filtres JSON Server que l'on peut utiliser pour les interfaces Duels, 
 ### Heroes
 
 - GET /heroes?\_sort=name : renvoie les heros triés par ordre alphabétique de leur nom.
-- GET /duels?name=superman : renvoie le hero possédant comme nom "superman".
+- GET /heroes?name=superman : renvoie le hero possédant comme nom "superman".
 - GET /heroes?=1 : renvoie les heros possédant l'objet à l'id 1.
 - GET /heroes?\_start=0&\_end=10 : renvoie les 10 premiers heros.
 - GET /heroes?\_limit=5&\_page=2 : renvoie la deuxième page de 5 heros.
 
 ### Items
 
-- GET /heroes?\_sort=name : renvoie les heros triés par ordre alphabétique de leur nom.
-- GET /duels?name=superman : renvoie le hero possédant comme nom "superman".
-- GET /heroes?=1 : renvoie les heros possédant l'objet à l'id 1.
-- GET /heroes?\_start=0&\_end=10 : renvoie les 10 premiers heros.
-- GET /heroes?\_limit=5&\_page=2 : renvoie la deuxième page de 5 heros.
+- GET /items?\_sort=name : renvoie les objets triés par ordre alphabétique de leur nom.
+- GET /items?name=superman : renvoie l'objet possédant comme nom "kryptonite".
+- GET /items?attack=20 : renvoie les objets 20 en stat d'attaque.
+- GET /items?\_start=0&\_end=10 : renvoie les 10 premiers objets.
+- GET /items?\_limit=5&\_page=2 : renvoie la deuxième page de 5 objets.
