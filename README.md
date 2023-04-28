@@ -22,3 +22,9 @@ Groupe : Alexandre (duels), Quentin (heroes) et Pierre (items)
 Objectif : faire une API Rest permettant d'accéder aux ressources (duels, héros, items) stockés.
 
 Le prof demande de faire les liens de navigatibilité.
+
+TODO
+
+	rapport : EN COURS
+
+	paramètres des requêtes de la spec OpenAPI : EN COURS
