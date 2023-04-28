@@ -64,7 +64,7 @@ paths:
                     life: 80
                     attack: 100
                     defense: 50
-                    itemsId: [3]
+                    itemsId: [3, 5]
                   - id: 4
                     name": "Gimli"
                     life: 90
@@ -181,6 +181,10 @@ paths:
                     name: "Axe of Durin"
                     attack: 10
                     defense: 30
+                  - id: 5
+                    name: "Sword of Legolas"
+                    attack: 25
+                    defense: 0
     post:
       summary: Create a new item
       requestBody:
