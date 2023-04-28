@@ -28,11 +28,44 @@ const routes = {
 		},
 		"duels": {
 			"": duelController.getAll,
-			":id":duelController.getById,
+			":id": duelController.getById,
 			"hero": {
 				":id": duelController.getByHero,
 			}
+		}
+	},
+	"post": {
+		"heroes": {
+			"": heroController.create
 		},
+		"items": {
+			"": itemController.create
+		},
+		"duels": {
+			"": duelController.create
+		}
+	},
+	"put": {
+		"heroes": {
+			":id": heroController.update
+		},
+		"items": {
+			":id": itemController.update
+		},
+		"duels": {
+			":id": duelController.update
+		}
+	},
+	"delete": {
+		"heroes": {
+			":id": heroController.delete
+		},
+		"items": {
+			":id": itemController.delete
+		},
+		"duels": {
+			":id": duelController.delete
+		}
 	}
 }
 
