@@ -3,19 +3,28 @@
 		{
 			"id": 1,
 			"date": "2023-04-01",
-			"champions" : [3,1],
+			"champions": [
+				3,
+				1
+			],
 			"winnerId": 3
 		},
 		{
 			"id": 2,
 			"date": "2023-03-30",
-			"champions" : [2,5],
+			"champions": [
+				2,
+				5
+			],
 			"winnerId": 2
 		},
 		{
 			"id": 3,
 			"date": "2023-03-27",
-			"champions" : [4,1],
+			"champions": [
+				4,
+				1
+			],
 			"winnerId": 4
 		}
 	],
@@ -26,7 +35,9 @@
 			"life": 100,
 			"attack": 80,
 			"defense": 60,
-			"itemsId": [1]
+			"itemsId": [
+				1
+			]
 		},
 		{
 			"id": 2,
@@ -34,7 +45,9 @@
 			"life": 120,
 			"attack": 90,
 			"defense": 70,
-			"itemsId": [2]
+			"itemsId": [
+				2
+			]
 		},
 		{
 			"id": 3,
@@ -42,7 +55,10 @@
 			"life": 80,
 			"attack": 100,
 			"defense": 50,
-			"itemsId": [3]
+			"itemsId": [
+				3,
+				5
+			]
 		},
 		{
 			"id": 4,
@@ -50,7 +66,9 @@
 			"life": 90,
 			"attack": 70,
 			"defense": 90,
-			"itemsId": [4]
+			"itemsId": [
+				4
+			]
 		},
 		{
 			"id": 5,
@@ -85,6 +103,12 @@
 			"name": "Axe of Durin",
 			"attack": 10,
 			"defense": 30
+		},
+		{
+			"id": 5,
+			"name": "Sword of Legolas",
+			"attack": 25,
+			"defense": 0
 		}
 	]
 }
