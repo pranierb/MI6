@@ -4,11 +4,18 @@ import dotenv from 'dotenv';
 import HeroController from './Controller/HeroController';
 import ItemController from './Controller/ItemController';
 import DuelController from './Controller/DuelController';
+import bodyParser from 'body-parser';
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 const heroController = new HeroController();
 

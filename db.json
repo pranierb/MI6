@@ -70,15 +70,14 @@
       ]
     },
     {
-      "id": 5,
-      "name": "Frodo",
-      "life": 60,
-      "attack": 50,
-      "defense": 40,
-      "itemsId": []
-    },
-    {
-      "id": 6
+      "name": "Gimli2",
+      "life": 90,
+      "attack": 70,
+      "defense": 90,
+      "itemsId": [
+        4
+      ],
+      "id": 5
     }
   ],
   "items": [
@@ -105,39 +104,6 @@
       "name": "Axe of Durin",
       "attack": 10,
       "defense": 30
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
     }
   ]
 }
