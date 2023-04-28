@@ -69,14 +69,6 @@
 			"itemsId": [
 				4
 			]
-		},
-		{
-			"id": 5,
-			"name": "Frodo",
-			"life": 60,
-			"attack": 50,
-			"defense": 40,
-			"itemsId": []
 		}
 	],
 	"items": [

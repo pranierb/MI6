@@ -16,8 +16,9 @@ export default class HeroController {
     }
 
     async create(req: Request, res: Response) {
+        console.log(req.body)
         const hero = await db(DBMethod.POST, tableType.HEROES, undefined, req.body);
-
+        
         res.send(hero);
     }
 
