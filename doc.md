@@ -117,14 +117,14 @@ Voici les filtres JSON Server que l'on peut utiliser pour les interfaces Duels, 
 
 - GET /heroes?\_sort=name : renvoie les heros triés par ordre alphabétique de leur nom.
 - GET /heroes?name=superman : renvoie le hero possédant comme nom "superman".
-- GET /heroes?=1 : renvoie les heros possédant l'objet à l'id 1.
+- GET /heroes?id=1 : renvoie les heros possédant l'objet à l'id 1.
 - GET /heroes?\_start=0&\_end=10 : renvoie les 10 premiers heros.
 - GET /heroes?\_limit=5&\_page=2 : renvoie la deuxième page de 5 heros.
 
 ### Items
 
 - GET /items?\_sort=name : renvoie les objets triés par ordre alphabétique de leur nom.
-- GET /items?name=superman : renvoie l'objet possédant comme nom "kryptonite".
+- GET /items?name=kryptonite : renvoie l'objet possédant comme nom "kryptonite".
 - GET /items?attack=20 : renvoie les objets 20 en stat d'attaque.
 - GET /items?\_start=0&\_end=10 : renvoie les 10 premiers objets.
 - GET /items?\_limit=5&\_page=2 : renvoie la deuxième page de 5 objets.
@@ -165,6 +165,39 @@ Si la création de l'élément a réussi, l'API renverra un code de réponse 201
 Si la création a échoué, l'API renverra un code de réponse 400 (Requête incorrecte) ou 500 (Erreur interne du serveur) avec un message d'erreur expliquant ce qui s'est mal passé.
 
 C'est ainsi que vous pouvez ajouter un héros, un objet ou un duel à l'API en utilisant une requête POST.
+
+# Modification d'un Héros, d'un Objet ou d'un Duel grâce à l'API
+
+L'API fournit des routes permettant de modifier un héros, un objet ou un duel en fonction de leur ID. Voici les méthodes HTTP et les routes correspondantes:
+
+- Modifier un héros : `PUT /heroes/:id`
+- Modifier un objet : `PUT /items/:id`
+- Modifier un duel : `PUT /duels/:id`
+
+Pour modifier un élément, vous devez envoyer une requête PUT à la route correspondante en spécifiant l'ID de l'élément que vous souhaitez modifier et le corps de la requête contenant les nouvelles informations de l'élément.
+
+Voici un exemple de requête PUT pour modifier un héros avec l'ID 1 :
+
+```
+PUT /heroes/1
+Content-Type: application/json
+
+{
+  "name": "NOUVEAU_NOM",
+    "life": "24",
+    "attack": "20",
+    "defense": "10",
+    "itemsId": [1,5],
+}
+```
+
+Dans cet exemple, nous envoyons une requête PUT à la route `/heroes/1` pour modifier le héros ayant l'ID 1. Le corps de la requête contient les nouvelles informations que nous souhaitons mettre à jour pour le héros.
+
+Si la modification de l'élément a réussi, l'API renverra un code de réponse 200 (OK) avec un corps de réponse contenant les informations de l'élément modifié.
+
+Si la modification a échoué, l'API renverra un code de réponse 404 (Non trouvé) ou 500 (Erreur interne du serveur) avec un message d'erreur expliquant ce qui s'est mal passé.
+
+C'est ainsi que vous pouvez modifier un héros, un objet ou un duel à l'API en utilisant une requête PUT.
 
 # Suppression d'un Héros, d'un Objet ou d'un Duel grâce à l'API
 
