@@ -79,6 +79,29 @@ paths:
                     itemsId: []
     post:
       summary: Create a new hero
+      parameters:
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: life
+          in: query
+          schema:
+            type: integer
+        - name: attack
+          in: query
+          schema:
+            type: integer
+        - name: defense
+          in: query
+          schema:
+            type: integer
+        - name: itemsId
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
       requestBody:
         required: true
         content:
@@ -150,7 +173,19 @@ paths:
     get:
       summary: Get all items or search items by attribute
       parameters:
+        - name: id
+          in: query
+          schema:
+            type: integer
+        - name: name
+          in: query
+          schema:
+            type: string
         - name: attack
+          in: query
+          schema:
+            type: integer
+        - name: defense
           in: query
           schema:
             type: integer
@@ -187,6 +222,19 @@ paths:
                     defense: 0
     post:
       summary: Create a new item
+      parameters:
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: attack
+          in: query
+          schema:
+            type: integer
+        - name: defense
+          in: query
+          schema:
+            type: integer
       requestBody:
         required: true
         content:
@@ -257,6 +305,25 @@ paths:
   /duels:
     get:
       summary: Get all duels
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: integer
+        - name: date
+          in: query
+          schema:
+            type: string
+        - name: champions
+          in: query
+          schema:
+            type: integer
+        - name: winnerId
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
       responses:
         '200':
           description: OK
@@ -285,6 +352,21 @@ paths:
                     winnerId: 4
     post:
       summary: Create a new duel
+      parameters:
+        - name: date
+          in: query
+          schema:
+            type: string
+        - name: champions
+          in: query
+          schema:
+            type: integer
+        - name: winnerId
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
       requestBody:
         required: true
         content:
