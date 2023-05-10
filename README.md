@@ -28,6 +28,3 @@ TODO
 	rapport : EN COURS
 
 		https://docs.google.com/document/d/1BiLBEGPC3PwpenEAlnOiIBORGhQRUm1Wo0XrWIwFvr4/edit?usp=sharing
-
-	paramètres des requêtes de la spec OpenAPI : EN COURS
-	

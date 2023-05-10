@@ -141,6 +141,28 @@ paths:
           required: true
           schema:
             type: integer
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: life
+          in: query
+          schema:
+            type: integer
+        - name: attack
+          in: query
+          schema:
+            type: integer
+        - name: defense
+          in: query
+          schema:
+            type: integer
+        - name: itemsId
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
       requestBody:
         required: true
         content:
@@ -272,6 +294,18 @@ paths:
         - name: id
           in: path
           required: true
+          schema:
+            type: integer
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: attack
+          in: query
+          schema:
+            type: integer
+        - name: defense
+          in: query
           schema:
             type: integer
       requestBody:
@@ -406,6 +440,20 @@ paths:
           required: true
           schema:
             type: integer
+        - name: date
+          in: query
+          schema:
+            type: string
+        - name: champions
+          in: query
+          schema:
+            type: integer
+        - name: winnerId
+          in: query
+          schema:
+            type: array
+            items:
+              type: integer
       requestBody:
         required: true
         content:
